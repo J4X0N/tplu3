@@ -1,4 +1,3 @@
-// JavaScript Document
 $(document).ready(function(){
     
     $(".nav-link.active").css("background-color","green");
