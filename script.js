@@ -1,7 +1,7 @@
 $(document).ready(function(){
     
     $(".nav-link.active").css("background-color","green");
-    //$(".nav-pills.nav-link.active, .nav-pills.show>.nav-link").css("background-color","green")
+    $(".nav-pills.nav-link.active, .nav-pills.show>.nav-link").css("background-color","green")
     $(window).scroll(function(){
 
 
