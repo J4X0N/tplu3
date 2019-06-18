@@ -6,15 +6,18 @@
 
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-<link rel="stylesheet" href="css/style.css"
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+<<<<<<< HEAD
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="js/smartCycle.min.js"></script>
 
 
-
+=======
+<link rel="stylesheet" href="css/style.css">
+>>>>>>> aa68bdc0da414021e4614f58bcaa28fa43adad69
 <title>第三分會</title>
 </head>
 <body data-spy="scroll" data-target="#navbar-menu" data-offset="50">
-
       <nav  id="navbar-menu" class="navbar fixed-top navbar-expand-lg navbar-dark">
           <a class="navbar-brand" href="#">第三分會</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,11 +35,70 @@
                     <a class="nav-link" href="#org">組織</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#four">Contact</a>
+                    <a class="nav-link" href="#contact">聯絡分會</a>
                 </li>
             </div>
           </div>
         </nav>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    <script src="js/smartCycle.min.js"></script>
+    <script>
+      typer(document.querySelector('#banner-text'),70)
+            .line('<h1>Welcome to my digital home!</h1>')
+            .cursor({block: false, blink: 'hard', color: 'red'});
+    </script>
+    <script>
+    $(function () {
+
+// init the validator
+// validator files are included in the download package
+// otherwise download from http://1000hz.github.io/bootstrap-validator
+
+$('#contact-form').validator();
+
+
+// when the form is submitted
+$('#contact-form').on('submit', function (e) {
+
+    // if the validator does not prevent form submit
+    if (!e.isDefaultPrevented()) {
+        var url = "contact.php";
+
+        // POST values in the background the the script URL
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: $(this).serialize(),
+            success: function (data)
+            {
+                // data = JSON object that contact.php returns
+
+                // we recieve the type of the message: success x danger and apply it to the 
+                var messageAlert = 'alert-' + data.type;
+                var messageText = data.message;
+
+                // let's compose Bootstrap alert box HTML
+                var alertBox = '<div class="alert ' + messageAlert + ' alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>' + messageText + '</div>';
+                
+                // If we have messageAlert and messageText
+                if (messageAlert && messageText) {
+                    // inject the alert to .messages div in our form
+                    $('#contact-form').find('.messages').html(alertBox);
+                    // empty the form
+                    $('#contact-form')[0].reset();
+                }
+            }
+        });
+        return false;
+    }
+})
+});</script>
+    <script src="script.js" type="text/JavaScript"></script>
+
         <div id="home" class="banner-area">
           <div class="intro-text container">
 
@@ -156,10 +218,10 @@
                 </div>
                     <!-- Button trigger modal -->
                   <div id="org"  class="dark-theme container-fluid section">
-                      <div class="row content-box" id="home" >
+                      <div class="row content-box" id="one" >
                           <div class="col-lg-12 ">
                             <h1 class="dark-theme headings">組織</h1>
-<div class="anyone">
+<div class="org">
     <a class="sc_object">總務</a>
     <a class="sc_object">組訓</a>
     <a class="sc_object">勞資</a>
@@ -172,20 +234,19 @@
 <script>
   $(".anyone").smartCycle();
 </script>
+<<<<<<< HEAD
                               
         
         
                           </div>
-                          <div class=" col-lg-12 sub-section">
-                            To know more about me,<br>
-                            <a href="./resume.pdf" target="_blank" class="btn btn-warning">View Resume</a>
+                      </div>       
+=======
                           </div>
                       </div>
-        
-        
+>>>>>>> aa68bdc0da414021e4614f58bcaa28fa43adad69
                   </div>
 
-                  <div id="four"  class="container-fluid section">
+                  <div id="contact"  class="container-fluid section">
                     <div class="row content-box" id="home" >
                         <div class="col-lg-12 ">
                             <h1 class=" headings">聯絡分會</h1>
@@ -245,6 +306,7 @@
                         </div>
                     </div> 
                   </div>
+<<<<<<< HEAD
                             
                   
   
@@ -252,8 +314,6 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script src="js/smartCycle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
     
@@ -311,5 +371,7 @@ $('#contact-form').on('submit', function (e) {
 })
 });</script>
     <script src="script.js" type="text/JavaScript"></script>
+=======
+>>>>>>> aa68bdc0da414021e4614f58bcaa28fa43adad69
   </body>
 </html>
