@@ -4,7 +4,6 @@
 .banner-area{
     background: url('../images/jp_logo.png') no-repeat center center fixed;
     background-size: cover;
-    
     text-align: center;
     vertical-align: middle;
     color: black;
@@ -13,21 +12,16 @@
 .banner-area-headline{
     font-size: 4.0rem;
 }
-
 .content-box{
     text-align: center;
     
 }
-
-
-
 .section{
     padding-top: 120px;
-    padding-bottom: 120px;
+    padding-bottom: 360px;
 }
 
-.headings{
-    
+.headings{    
     margin-bottom: 40px;
     text-align: center;
     color:rgb(42, 119, 60);
@@ -123,4 +117,9 @@ div i{
 .sub-section{
     padding-bottom: 40px;
     padding-top: 40px;
+}
+/* _________________________________catalog__________________________________________ */
+.catalog{
+text-align: center;
+position: absolute;
 }
